@@ -8,16 +8,16 @@ output: html_document
 ### Executive Summary
 The goal of this data analysis is to predict the manner in which the user did
 the exercise. The training data set contains the target variable `classe`, all 
-other variables will be used to predict it. Using cross validation, I will
-find the model that best fits the data.   Started by cleaning the dataset, 
+other variables will be used to predict for it. Using cross validation, I will
+find the best model for the data. Started by cleaning the dataset, 
 removing columns that were not related to accelerometer reading and readings 
-that were dominated by NA values. This reduced the variables from 160 to 53. 
-I started with a fast recursive partitioning model to see if that would produce
-reasonable predictions.  Unfortunately the  estimated out of sample error for the
-`rpart` model was 51% and far to high. Next I tried a random forest model
-with 3-fold cross validation. This model performed really well with an 
-estimated out of sample of only 0.7%. Using this  model, 20 predictions will
-be made for the test data set.
+that were dominated by NA values. This reduced the variables from 160 to 53, a 
+more optimal amount. Then tried a fast recursive partitioning model to 
+ to see if that would produce reasonable predictions.  Unfortunately the 
+estimated out of sample error for the `rpart` model was 51% and far to high.
+Next tried a random forest model with 3-fold cross validation. This model
+performed really well with an estimated out of sample of only 0.7%. Using this 
+model, 20 predictions will be made for the test data set.
 
 ### Load Dedepdencies
 ```{r results="hide", warning=FALSE, error=FALSE, message=FALSE}
